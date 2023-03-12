@@ -1,3 +1,28 @@
+// examples
+
+const shoppingCart = [
+  {
+    id: 1,
+    name: 'T-shirt',
+    price: 20.0,
+    quantity: 2,
+  },
+  {
+    id: 2,
+    name: 'Jeans',
+    price: 50.0,
+    quantity: 1,
+  },
+  {
+    id: 3,
+    name: 'Sneakers',
+    price: 80.0,
+    quantity: 1,
+  },
+];
+
+const fruits = ['apple', 'banana', 'orange', 'kiwi', 'mango', 'pineapple'];
+
 // array creation
 const arrayLiteral = [1, 2, 3, 4, 5];
 const arrayConstructor = new Array(5);

@@ -146,3 +146,8 @@ if (!nullVariable) {
 // no value types
 let undefinedValue; // this has value of undefined
 const nullValue = null;
+
+// var variables
+// avoid declaring variables with var
+
+var avoidDeclaringmeWithVar = "don't do it";
