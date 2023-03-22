@@ -138,6 +138,8 @@ function updateWorkExperienceList() {
 			const deleteBtn = document.createElement('button');
 			deleteBtn.textContent = 'Delete';
 			deleteBtn.classList.add('delete-work-experience-btn');
+			deleteBtn.dataset.id = index + 1;
+
 			deleteBtn.addEventListener('click', deleteWorkExperience);
 
 			// adding elements to list item
@@ -157,11 +159,17 @@ function updateWorkExperienceList() {
 function deleteWorkExperience(event) {
   // Get the ID of the work experience to delete
   const id = parseInt(event.target.dataset.id);
+	console.log(event.target.dataset);
 
   // Find the index of the work experience with the corresponding ID
   const index = workExperiences.findIndex((item) => item.id === id);
 
+	if(index === -1) return;
+
+	console.log(index);
+
   // Remove the work experience from the array
+  // workExperiences.splice(-1, 1); --> pay attention to this
   workExperiences.splice(index, 1);
 
   // Re-render the work experience list
