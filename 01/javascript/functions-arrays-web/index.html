@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+	<script defer src="app.js"></script>
+	<title>My CV</title>
+</head>
+<body>
+
+	<header>
+		<h1>Whose CV is this?</h1>
+		<p>This is <strong id="cv-owner-title">someone's</strong> CV</p>
+	</header>
+
+	<main>
+		<section class="main-content__personal_info">
+			<h2>Personal information</h2>
+			<p>First name: <strong id="first-name-label"></strong></p>
+			<p>Last name: <strong id="last-name-label"></strong></p>
+			<p>Age: <strong id="age-label"></strong></p>
+			<p>Can speak Croatian: <strong id="can-speak-croatian-label"></strong></p>
+		</section>
+		
+		<section class="main-content__work-experience">
+			<h2>Work experience</h2>
+			<button class="delete-first-work-experience-btn">Delete first work experience</button>
+			<button class="delete-last-work-experience-btn">Delete last work experience</button>
+			<ul class="work-experience__list">
+				<!-- <li>
+					<p>Start date: <strong id="work-start-date-label"></strong></p>
+					<p>End date: <strong id="work-end-date-label"></strong></p>
+					<p>Company name: <strong id="work-company-name-label"></strong></p>
+					<p>Industry: <strong id="work-industry-label"></strong></p>
+					<p>Current job: <strong id="work-current-label"></strong></p>
+					<button class="delete-work-experience-btn">Delete</button>
+				</li> -->
+			</ul>
+		</section>
+		<section class="main-content__personal-info-form">
+			<h2>Personal information form</h2>
+			<form id="personal-info-form">
+				<label for="first-name-input">First name:</label>
+				<input type="text" id="first-name-input" name="first-name"><br>
+		
+				<label for="last-name-input">Last name:</label>
+				<input type="text" id="last-name-input" name="last-name"><br>
+		
+				<label for="dob-input">Date of birth:</label>
+				<input type="date" id="dob-input" name="dob"><br>
+		
+				<label for="can-speak-croatian-input">Can speak Croatian:</label>
+				<input type="checkbox" id="can-speak-croatian-input" name="can-speak-croatian"><br>
+		
+				<button type="submit">Save</button>
+			</form>
+		</section>
+
+		<section class="main-content__work-experience-form">
+			<h2>Add work experience</h2>
+			<form id="work-experience-form">
+				<label for="work-start-date-input">Start date:</label>
+				<input type="date" id="work-start-date-input" name="work-start-date"><br>
+		
+				<label for="work-end-date-input">End date:</label>
+				<input type="date" id="work-end-date-input" name="work-end-date"><br>
+		
+				<label for="work-company-name-input">Company name:</label>
+				<input type="text" id="work-company-name-input" name="work-company-name"><br>
+		
+				<label for="work-industry-input">Industry:</label>
+				<input type="text" id="work-industry-input" name="work-industry"><br>
+
+				<label for="still-works-here-input">Still works here:</label>
+				<input type="checkbox" id="still-works-here-input" name="still-works-here"><br>
+		
+		
+				<button type="submit">Add work experience</button>
+			</form>
+		</section>
+	</main>
+	
+</body>
+</html>
