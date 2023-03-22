@@ -76,6 +76,10 @@ function addWorkExperience(event) {
   const industry = formData.get('work-industry');
   const current = formData.get('work-current') === 'on';
 
+	for (let [key, value] of formData.entries()) {
+		console.log(`${key}: ${value}`);
+	}
+
 
   // Create a new work experience object with the form data
   const newExperience = {
@@ -112,15 +116,15 @@ function updateWorkExperienceList() {
 			li.setAttribute('id', index + 1);
 
 			const startDate = document.createElement('p');
-			const startDateText = item.start ? `Start date: ${item.start}` : 'Start date: N/A';
+			const startDateText = item.startDate ? `Start date: ${item.startDate}` : 'Start date: N/A';
 			startDate.textContent = startDateText;
 
 			const endDate = document.createElement('p');
-			const endDateText = item.end ? `End date: ${item.end}` : 'End date: N/A';
+			const endDateText = item.endDate ? `End date: ${item.endDate}` : 'End date: N/A';
 			endDate.textContent = endDateText;
 
 			const company = document.createElement('p');
-			const companyText = item.company ? `Company: ${item.company}` : 'Company: N/A';
+			const companyText = item.companyName ? `Company: ${item.companyName}` : 'Company: N/A';
 			company.textContent = companyText;
 			
 			const industry = document.createElement('p');
@@ -128,7 +132,7 @@ function updateWorkExperienceList() {
 			industry.textContent = industryText;
 
 			const stillWorking = document.createElement('p');
-			const stillWorkingText = item.stillWorking ? 'Yes' : 'No';
+			const stillWorkingText = item.current ? 'Yes' : 'No';
 			stillWorking.textContent = `Still working: ${stillWorkingText}`;
 
 			const deleteBtn = document.createElement('button');
