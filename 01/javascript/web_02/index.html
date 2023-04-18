@@ -1,0 +1,104 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+    <title>JS Concepts Tracker</title>
+    <script src="js/index.js" defer type="module"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <h1 class="nav__title">JSCT</h1>
+            </li>
+            <li class="nav__item">
+              <a href="/pages/about.html" class="nav__link">About</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="main">
+        <section class="manipulation">
+          <h2 class="manipulation__title">
+            Concepts list manipulation section
+          </h2>
+
+          <div class="manipulation__add">
+            <h3 class="manipulation__subtitle">Add new concept</h3>
+            <button class="manipulation__add-button">+</button>
+          </div>
+
+          <div class="manipulation__sort">
+            <h3 class="manipulation__subtitle">Sort concepts</h3>
+          </div>
+          <div class="manipulation__filter">
+            <h3 class="manipulation__subtitle">Filter concepts</h3>
+          </div>
+        </section>
+
+        <section class="concepts">
+          <h2 class="concepts__title">Concepts</h2>
+
+          <div class="concepts__list-container">
+            <ul class="concepts__list">
+              <!-- <li class="concepts__item">
+                <div class="concepts__content">
+                  <h3 class="concepts__subtitle">Arrays</h3>
+                </div>
+              </li>
+              <li class="concepts__item">
+                <div class="concepts__content">
+                  <h3 class="concepts__subtitle">Objects</h3>
+                </div>
+              </li>
+              <li class="concepts__item">
+                <div class="concepts__content">
+                  <h3 class="concepts__subtitle">Variables</h3>
+                </div>
+              </li>
+              <li class="concepts__item">
+                <div class="concepts__content">
+                  <h3 class="concepts__subtitle">Functions</h3>
+                </div>
+              </li> -->
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__copyright">Copyright for something</p>
+          <address class="footer__address">
+            <p class="footer__address-line">Some address</p>
+            <p class="footer__address-line">Pula</p>
+            <p class="footer__address-line">Croatia</p>
+          </address>
+        </div>
+      </footer>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal__content">
+        <span class="modal__close">&times;</span>
+        <h2 class="modal__title">Add New Concept</h2>
+        <form id="concept-form" class="modal__form">
+          <label for="concept-name" class="modal__label">Concept Name:</label>
+          <input type="text" id="concept-name" class="modal__input" required />
+          <button type="submit" class="modal__submit">Add Concept</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
