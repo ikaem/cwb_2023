@@ -100,9 +100,16 @@ li {
 }
 
 .concepts__content {
-  padding: 15px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.concepts__content.done {
+  background-color: #a3d7a3;
 }
 
 /* Footer */

@@ -1,4 +1,5 @@
-import ConceptModel from '../models/concept_model.js';
+import ConceptModel from '../js/models/concept_model.js';
+import constants from '../js/constants.js';
 
 // state
 const concepts = [];
@@ -37,8 +38,13 @@ function closeModal(event) {
 function handleFormSubmit(event) {
   event.preventDefault();
 
-  var conceptName = document.getElementById('concept-name').value;
-  var newConcept = new ConceptModel(conceptName, 'New', Date.now(), []);
+  const conceptName = document.getElementById('concept-name').value;
+  const newConcept = new ConceptModel(
+    conceptName,
+    constants.newConcept,
+    Date.now(),
+    []
+  );
 
   concepts.push(newConcept);
   renderConcepts();
@@ -52,24 +58,50 @@ function renderConcepts() {
   const conceptsList = document.querySelector('.concepts__list');
   conceptsList.innerHTML = '';
 
-  concepts.forEach((concept) => {
+  console.log(concepts);
+
+  concepts.forEach((concept, index) => {
+    const conceptStatus = concept.status;
+
     const listItem = document.createElement('li');
     listItem.className = 'concepts__item';
 
     const content = document.createElement('div');
-    content.className = 'concepts__content';
+    content.className =
+      'concepts__content' +
+      (concept.status === constants.learnedConcept ? ' done' : '');
 
     const subtitle = document.createElement('h3');
     subtitle.className = 'concepts__subtitle';
     subtitle.textContent = concept.name;
 
     const learnedButton = document.createElement('button');
+    const statusGlyph = conceptStatus == constants.newConcept ? 'done' : 'undo';
+
     learnedButton.className = 'concepts__learned-button';
-    learnedButton.innerHTML = '<i class="material-icons">undo</i>';
+    learnedButton.innerHTML = `<i class="material-icons">${statusGlyph}</i>`;
+
+    learnedButton.addEventListener('click', (event) => {
+      toggleConceptStatus(index);
+    });
 
     content.appendChild(subtitle);
     content.appendChild(learnedButton);
     listItem.appendChild(content);
     conceptsList.appendChild(listItem);
   });
+}
+
+// mark concept as done
+
+function toggleConceptStatus(conceptIndex) {
+  const currentConcept = concepts[conceptIndex];
+  const status = currentConcept.status;
+
+  concepts[conceptIndex].status =
+    status == constants.learnedConcept
+      ? constants.newConcept
+      : constants.learnedConcept;
+
+  renderConcepts();
 }
